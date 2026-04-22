@@ -260,7 +260,84 @@ psql -d serverai -c "TRUNCATE users, orders, servers RESTART IDENTITY CASCADE;"
 
 ---
 
-## 九、关于本项目
+## 九、管理后台页面介绍
+
+为便于上手与交接，下面给出管理后台核心页面的用途说明（对应 `index/src/app/admin` 下页面）。
+
+### 1. 数据总览与运营监控
+
+| 页面 | 路由 | 介绍 |
+|------|------|------|
+| 仪表盘 | `/admin` | 后台首页，展示用户、订单、服务器、工单等核心 KPI 与待处理事项。 |
+| 实时监控 | `/admin/realtime` | 监控在线状态与实时事件，适合值班时快速观察全局状态。 |
+| 数据分析 | `/admin/analytics` | 用户增长、收入趋势、地区分布、渠道贡献等统计看板。 |
+| AI 周报 | `/admin/reports` | AI 汇总周报信息，帮助复盘运营变化。 |
+| NPS 满意度 | `/admin/nps` | 客户满意度评分与分布统计。 |
+
+### 2. 用户、商品、服务器
+
+| 页面 | 路由 | 介绍 |
+|------|------|------|
+| 用户管理 | `/admin/users` | 用户列表、角色等级、基础信息管理。 |
+| 用户详情 | `/admin/users/[id]` | 用户资料、订单、服务、工单等明细查看与编辑。 |
+| 登录日志 | `/admin/login-history` | 登录行为审计与风险排查。 |
+| 积分管理 | `/admin/points` | 用户积分策略、流水与调整。 |
+| 商品管理 | `/admin/products` | 商品列表、状态、价格与上下架。 |
+| AI 商品助手 | `/admin/products/ai` | 辅助生成或优化商品文案、结构信息。 |
+| 商品分析 | `/admin/products/analytics` | 商品维度的数据表现分析。 |
+| 商品设置 | `/admin/products/settings` | 商品相关系统级配置。 |
+| CPU 型号 | `/admin/cpus` | CPU 参数维护，用于商品规格展示与筛选。 |
+| 地区管理 | `/admin/regions` | 可售地区与地域信息维护。 |
+| 供应商管理 | `/admin/suppliers` | 供应商信息、合作参数与状态管理。 |
+| 定价策略 | `/admin/pricing` | 统一维护定价规则与利润模型。 |
+| 实例管理 | `/admin/servers` | 服务器实例列表、状态与分配管理。 |
+| 到期日历 | `/admin/servers/calendar` | 按日历展示实例到期分布，便于续费/提醒。 |
+| 续费管理 | `/admin/servers/renewal` | 续费相关的集中处理入口。 |
+
+### 3. 订单、财务、客服
+
+| 页面 | 路由 | 介绍 |
+|------|------|------|
+| 订单管理 | `/admin/orders` | 订单查询、状态流转、异常订单处理。 |
+| 用户评价 | `/admin/reviews` | 订单/服务评价查看与统计。 |
+| 财务概览 | `/admin/finance` | 收入、毛利、订单与用户消费概览。 |
+| 交易流水 | `/admin/finance/transactions` | 交易明细筛选与对账。 |
+| 充值与调账 | `/admin/finance/balance` | 对用户余额执行充值、扣减等操作。 |
+| 财务趋势 | `/admin/finance/trends` | 收入、订单、活跃用户趋势分析。 |
+| 消费排行 | `/admin/finance/top-users` | 用户消费排行，用于运营与风控参考。 |
+| 工单管理 | `/admin/tickets` | 工单列表、状态处理、分派与跟进。 |
+| 工单详情 | `/admin/tickets/[id]` | 单条工单会话与处理记录。 |
+| AI 工单助手 | `/admin/tickets/ai` | 工单分类、摘要、建议回复等 AI 辅助能力。 |
+| 工单评分 | `/admin/ticket-ratings` | 工单处理质量评分统计。 |
+| SLA 配置 | `/admin/sla` | 定义 SLA 指标、阈值与补偿规则。 |
+| SLA 监控 | `/admin/sla/violations` | SLA 违规记录追踪与分析。 |
+
+### 4. 代理、内容、系统运维
+
+| 页面 | 路由 | 介绍 |
+|------|------|------|
+| 代理商管理 | `/admin/agent-commission` | 代理体系、佣金规则与业绩管理。 |
+| 提现审批 | `/admin/agent-commission/withdrawals` | 代理提现申请审核流程。 |
+| 公告管理 | `/admin/announcements` | 公告创建、定时发布、优先级管理。 |
+| 通知广播 | `/admin/notifications` | 站内信/邮件/短信多渠道广播。 |
+| 帮助分类 | `/admin/article-categories` | 文档分类目录管理。 |
+| 帮助文章 | `/admin/articles` | 帮助文档内容编辑与发布。 |
+| 优惠券管理 | `/admin/coupons` | 优惠券活动创建、发放、状态管理。 |
+| 邮件模板 | `/admin/email-templates` | 邮件模板维护与测试。 |
+| 系统设置 | `/admin/settings` | 站点信息、AI 配置、基础策略设置。 |
+| 操作日志 | `/admin/logs` | 管理操作审计日志。 |
+| 定时任务日志 | `/admin/cron-logs` | 定时任务执行状态追踪。 |
+| 异常检测 | `/admin/anomalies` | 识别可疑行为与异常业务波动。 |
+| API 用量 | `/admin/api-usage` | API 调用量与配额消耗统计。 |
+| 数据库备份 | `/admin/backups` | 手动备份、下载与备份记录查看。 |
+| 批量操作 | `/admin/bulk` | 面向服务器/用户的批量运维动作。 |
+| 数据导出 | `/admin/export` | 用户、订单、财务等数据导出。 |
+
+> 说明：部分页面需要有对应业务数据后才会展示完整图表或列表，空库时显示为“暂无数据”属于正常行为。
+
+---
+
+## 十、关于本项目
 
 本项目围绕 IDC 业务、财务管理、代理分销等方向构建，代码与思路均开放参考，适合交流学习与二次开发。
 
