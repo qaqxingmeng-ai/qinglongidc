@@ -11,6 +11,10 @@
 
 ---
 
+**我们立意开篇，引星河筑梦。**
+
+---
+
 ## 一、功能总览
 
 ### 用户前台（`/`）
@@ -335,7 +339,7 @@ psql -d serverai -c "TRUNCATE users, orders, servers RESTART IDENTITY CASCADE;"
 
 > 说明：部分页面需要有对应业务数据后才会展示完整图表或列表，空库时显示为“暂无数据”属于正常行为。
 
-### 5. UI 页面预览（已收录）
+### 5. 功能 页面预览（部分）
 
 以下截图已放入 `docs/ui-previews/`，用于给用户直观看到后台界面。
 
@@ -363,4 +367,4 @@ psql -d serverai -c "TRUNCATE users, orders, servers RESTART IDENTITY CASCADE;"
 - **QQ 交流群**：770906516  
 - **官网**：青龙云 [www.qinglongyun.com](http://www.qinglongyun.com)
 
-*我们立意开篇，引星河筑梦。*
+
