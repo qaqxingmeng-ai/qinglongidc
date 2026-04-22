@@ -335,6 +335,52 @@ psql -d serverai -c "TRUNCATE users, orders, servers RESTART IDENTITY CASCADE;"
 
 > 说明：部分页面需要有对应业务数据后才会展示完整图表或列表，空库时显示为“暂无数据”属于正常行为。
 
+### 5. UI 页面预览（截图）
+
+将截图文件放到 `docs/ui-previews/` 目录后，README 会自动展示。
+
+建议文件名：
+
+- `01-dashboard.png`
+- `02-analytics.png`
+- `03-user-profile-modal.png`
+- `04-server-calendar.png`
+- `05-user-reviews.png`
+- `06-finance-overview.png`
+- `07-finance-transactions.png`
+- `08-balance-adjust.png`
+- `09-finance-trends.png`
+- `10-ticket-management.png`
+- `11-sla-config.png`
+- `12-announcements-modal.png`
+- `13-notification-broadcast.png`
+- `14-coupon-modal.png`
+- `15-system-settings.png`
+- `16-database-backup.png`
+- `17-bulk-operations.png`
+- `18-data-export.png`
+
+#### 预览图
+
+![仪表盘](docs/ui-previews/01-dashboard.png)
+![数据分析](docs/ui-previews/02-analytics.png)
+![用户管理弹窗](docs/ui-previews/03-user-profile-modal.png)
+![到期日历](docs/ui-previews/04-server-calendar.png)
+![用户评价](docs/ui-previews/05-user-reviews.png)
+![财务概览](docs/ui-previews/06-finance-overview.png)
+![交易流水](docs/ui-previews/07-finance-transactions.png)
+![充值与调账](docs/ui-previews/08-balance-adjust.png)
+![财务趋势](docs/ui-previews/09-finance-trends.png)
+![工单管理](docs/ui-previews/10-ticket-management.png)
+![SLA 配置](docs/ui-previews/11-sla-config.png)
+![公告管理弹窗](docs/ui-previews/12-announcements-modal.png)
+![通知广播](docs/ui-previews/13-notification-broadcast.png)
+![优惠券弹窗](docs/ui-previews/14-coupon-modal.png)
+![系统设置](docs/ui-previews/15-system-settings.png)
+![数据库备份](docs/ui-previews/16-database-backup.png)
+![批量操作](docs/ui-previews/17-bulk-operations.png)
+![数据导出](docs/ui-previews/18-data-export.png)
+
 ---
 
 ## 十、关于本项目
