@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend
+index/node_modules/
+index/.next/
+index/.next-dev/
+index/dist/
+index/build/
+
+# Backend binary
+houduan/server
+houduan/server-*
+
+# Env / secrets
+**/*.env
+**/*.env.*
+!**/*.env.example
+
+# Logs
+*.log
+logs/
+
+# SQL backups
+sql/backups/
+
+# Archives
+*.zip
+*.tar.gz

@@ -1,0 +1,36 @@
+{
+  "name": "server-ai-platform",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "scripts": {
+    "dev:stop": "sh -c 'pids=$(lsof -ti tcp:3000 2>/dev/null); if [ -n \"$pids\" ]; then kill $pids; fi'",
+    "dev:clean": "sh -c 'pids=$(lsof -ti tcp:3000 2>/dev/null); if [ -n \"$pids\" ] && [ \"${FORCE_CLEAN:-0}\" != \"1\" ]; then echo \"Refusing to clean while dev server is running on :3000. Run npm run dev:stop first, or FORCE_CLEAN=1 npm run dev:clean\"; exit 1; fi; rm -rf .next .next-dev'",
+    "predev": "sh -c ':'",
+    "dev:restart": "bash ./scripts/next-dev-safe.sh",
+    "dev": "bash ./scripts/next-dev-safe.sh",
+    "build": "sh -c 'if [ -x /opt/homebrew/opt/node@22/bin/node ]; then PATH=\"/opt/homebrew/opt/node@22/bin:$PATH\"; fi; bash ./scripts/with-local-env.sh next build'",
+    "start": "sh -c 'if [ -x /opt/homebrew/opt/node@22/bin/node ]; then PATH=\"/opt/homebrew/opt/node@22/bin:$PATH\"; fi; bash ./scripts/with-local-env.sh next start'",
+    "lint": "sh -c 'if [ -x /opt/homebrew/opt/node@22/bin/node ]; then PATH=\"/opt/homebrew/opt/node@22/bin:$PATH\"; fi; bash ./scripts/with-local-env.sh next lint'"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "next": "^15.5.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.9",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "15.5.15",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2"
+  }
+}
